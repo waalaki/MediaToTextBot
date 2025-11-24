@@ -1,0 +1,9 @@
+Pyrogram
+pyTelegramBotAPI
+assemblyai
+pymongo
+Flask
+requests
+tgcrypto
+python-dotenv
+dnspython
