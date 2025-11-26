@@ -39,7 +39,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
 
 ASSEMBLYAI_API_KEYS = os.environ.get("ASSEMBLYAI_API_KEYS", DEFAULT_ASSEMBLY_KEYS)
 GEMINI_API_KEYS = os.environ.get("GEMINI_API_KEYS", DEFAULT_GEMINI_KEYS)
-REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "@ok_fans")
+REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "")
 
 DOWNLOADS_DIR = os.environ.get("DOWNLOADS_DIR", "./downloads")
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
