@@ -233,7 +233,7 @@ HELP_MESSAGE = f"""/start - Show welcome message
 /mode  - Change result delivery mode
 /help  - This help message
 
-Send a voice/audio/video (up to {MAX_UPLOAD_MB}MB) and I will transcribe it Powered by @ok_fans
+Send a voice/audio/video (up to {MAX_UPLOAD_MB}MB) and I will transcribe it Powered by @orlaki
 """
 
 async def is_user_in_channel(client, user_id: int) -> bool:
