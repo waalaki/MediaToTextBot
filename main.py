@@ -447,7 +447,7 @@ async def language_callback_query(client, callback_query: CallbackQuery):
         await callback_query.message.delete()
         await client.send_chat_action(chat_id, ChatAction.TYPING)
 
-        instruction = f"Translate the following text into {label}. Maintain the original tone and formatting. Do not add any introductory phrases, explanations, or the original text. ONLY return the translated text."
+        instruction = f"Translate this text into {label}. Do not add any introductory phrases, or the original text. ONLY return the translated text."
         try:
             loop = asyncio.get_event_loop()
             translated_text = await loop.run_in_executor(None, ask_gemini, original_text, instruction)
