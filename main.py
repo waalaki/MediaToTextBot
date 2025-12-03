@@ -227,7 +227,7 @@ def upload_and_transcribe_gemini(file_path: str, lang_code: str = "en") -> str:
                         raise RuntimeError(f"File processing failed: {state_data}")
                 time.sleep(2)
             generate_url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
-            prompt = f"Transcribe the audio in this file. Provide a clean, accurate transcription in {lang_code}. Do not add any introductory phrases or explanations."
+            prompt = f"Transcribe the audio in this file. Provide a clean, accurate transcription Do not add any introductory phrases or explanations."
             payload = {
                 "contents": [{
                     "parts": [
