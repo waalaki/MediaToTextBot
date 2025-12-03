@@ -355,7 +355,7 @@ async def send_join_prompt_to_target(client, uid: int, reply_target=None):
     kb = InlineKeyboardMarkup([
         [InlineKeyboardButton("Join", url=f"https://t.me/{clean_channel_username}")]
     ])
-    text = "Please join the channel first."
+    text = "Join my channel, it's mandatory 🤡"
     try:
         if reply_target is not None:
             try:
