@@ -52,7 +52,7 @@ DOWNLOADS_DIR = os.environ.get("DOWNLOADS_DIR", "./downloads")
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-USER_FREE_USAGE = int(os.environ.get("USER_FREE_USAGE", 3))
+USER_FREE_USAGE = int(os.environ.get("USER_FREE_USAGE", 1))
 
 def parse_keys(s):
     if not s:
@@ -349,7 +349,6 @@ WELCOME_MESSAGE = """👋 **Salaam!**
 """
 
 HELP_MESSAGE = f"""/start - Show welcome message
-/mode - Change output mode
 /help - This help message
 Send a voice/audio/video (up to {MAX_UPLOAD_MB}MB) to transcribe. any error or help ➡️ https://t.me/joinme35
 """
