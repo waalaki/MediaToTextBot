@@ -321,9 +321,9 @@ def ask_gemini(text, instruction, timeout=REQUEST_TIMEOUT_GEMINI):
 
 def build_action_keyboard(text_length):
     buttons = []
-    buttons.append([InlineKeyboardButton("Get translating", callback_data=f"translate_menu|")])
+    buttons.append([InlineKeyboardButton("⭐️ Get translating", callback_data=f"translate_menu|")])
     if text_length > 1000:
-        buttons.append([InlineKeyboardButton("Get Summarize", callback_data=f"summarize|")])
+        buttons.append([InlineKeyboardButton("Summarize", callback_data=f"summarize|")])
     return InlineKeyboardMarkup(buttons)
 
 def build_language_keyboard(origin):
