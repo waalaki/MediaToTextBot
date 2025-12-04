@@ -351,7 +351,7 @@ WELCOME_MESSAGE = """👋 **Salaam!**
 HELP_MESSAGE = f"""/start - Show welcome message
 /mode - Change output mode
 /help - This help message
-Send a voice/audio/video (up to {MAX_UPLOAD_MB}MB) to transcribe. The dev and admin are @orlaki
+Send a voice/audio/video (up to {MAX_UPLOAD_MB}MB) to transcribe. any error or help ➡️ https://t.me/joinme35
 """
 
 async def is_user_in_channel(client, user_id: int) -> bool:
