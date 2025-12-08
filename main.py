@@ -24,7 +24,7 @@ DAILY_LIMIT = int(os.environ.get("DAILY_LIMIT", "19"))
 WINDOW_SECONDS = 24 * 3600
 
 # Constants-ka cusub ee Forward-ga
-KEY_PROMPT_CHANNEL_ID = -1003198567594  # ID-ga Channel-ka video-ga uu ku jiro
+KEY_PROMPT_CHANNEL_ID =1003198567594  # ID-ga Channel-ka video-ga uu ku jiro
 # WAA IN AAD BADASHAA MESSAGE ID-GAN oo aad u dhigtaa ID-ga video-ga Channel-ka dhexdiisa.
 KEY_PROMPT_VIDEO_ID = 1234  
 
