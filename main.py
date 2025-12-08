@@ -20,7 +20,7 @@ MAX_MESSAGE_CHUNK = 4095
 
 # Ka saar DEFAULT_GEMINI_KEYS iyo GEMINI_API_KEYS. Hadda waxaan ku tiirsannahay oo kaliya furayaasha user-ka.
 # DEFAULT_GEMINI_KEYS = os.environ.get("DEFAULT_GEMINI_KEYS", "") # Removed
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash-lite")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 # GEMINI_API_KEYS = os.environ.get("GEMINI_API_KEYS", DEFAULT_GEMINI_KEYS) # Removed
 
 REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "")
