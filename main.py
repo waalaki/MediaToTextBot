@@ -172,7 +172,7 @@ def send_welcome(message):
             "• audio file\n"
             "• video\n"
             "• to transcribe for free\n\n"
-            "Choose your preferred transcription language now or send a file and I'll ask you then."
+            "Choose your File language 🥳"
         )
         kb = build_lang_keyboard("file")
         bot.reply_to(message, welcome_text, reply_markup=kb, parse_mode="Markdown")
@@ -202,7 +202,7 @@ def mode_cb(call):
 def lang_command(message):
     if ensure_joined(message):
         kb = build_lang_keyboard("file")
-        bot.reply_to(message, "Choose language for upcoming transcription:", reply_markup=kb)
+        bot.reply_to(message, "okay Choose your File language:", reply_markup=kb)
 
 @bot.callback_query_handler(func=lambda c: c.data.startswith('lang|'))
 def lang_cb(call):
@@ -231,7 +231,7 @@ def lang_cb(call):
             sent = send_long_text(chat_id, text, orig_msg.id, orig_msg.from_user.id)
             if sent:
                 user_transcriptions.setdefault(chat_id, {})[sent.message_id] = {"text": text, "origin": orig_msg.id}
-                bot.send_message(chat_id, "Transcript sent")
+                bot.send_message(chat_id, "completed!")
                 send_promo(chat_id)
         except Exception as e:
             bot.send_message(chat_id, f"❌ Error: {e}")
