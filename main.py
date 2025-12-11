@@ -172,7 +172,7 @@ def send_welcome(message):
             "• audio file\n"
             "• video\n"
             "• to transcribe for free\n\n"
-            "Select the language spoken in your audio or video:🥳"
+            "Select the language spoken in your audio or video:"
         )
         kb = build_lang_keyboard("file")
         bot.reply_to(message, welcome_text, reply_markup=kb, parse_mode="Markdown")
@@ -291,7 +291,7 @@ def send_long_text(chat_id, text, reply_id, uid, action="Transcript"):
             fname = os.path.join(DOWNLOADS_DIR, f"{action}.txt")
             with open(fname, "w", encoding="utf-8") as f:
                 f.write(text)
-            sent = bot.send_document(chat_id, open(fname, 'rb'), caption="Open this file and copy the text inside 👍\nFor summarizing and cleaning, use ChatGPT.” 👍", reply_to_message_id=reply_id)
+            sent = bot.send_document(chat_id, open(fname, 'rb'), caption="Open this file and copy the text inside 👍\n For summarizing and cleaning use ChatGPT", reply_to_message_id=reply_id)
             os.remove(fname)
             return sent
     return bot.send_message(chat_id, text, reply_to_message_id=reply_id)
