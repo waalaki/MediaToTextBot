@@ -131,7 +131,7 @@ def set_key_plain(message):
     if not ensure_joined(message): return
     token = message.text.strip().split()[0]
     if not token.startswith("AIz"):
-        bot.reply_to(message, "Invalid key. Key must start with AIz")
+        bot.reply_to(message, "Invalid key 🙅🏻")
         return
     prev = user_gemini_keys.get(message.from_user.id)
     user_gemini_keys[message.from_user.id] = token
