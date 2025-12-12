@@ -144,9 +144,12 @@ def set_key_plain(message):
 def send_welcome(message):
     if ensure_joined(message):
         welcome_text = (
-            "Salaam!\n"
-            "Send a voice, audio, video or file to transcribe.\n"
-            "You can just paste your Gemini key directly (must start with AIz)."
+            "👋 Salaam!\n"
+            "• Send me\n"
+            "• voice message\n"
+            "• audio file\n"
+            "• video\n"
+            "• to transcribe for free"
         )
         bot.reply_to(message, welcome_text, parse_mode="Markdown")
 
@@ -202,7 +205,7 @@ def process_text_action(call, origin_msg_id, log_action, prompt_instr):
         return
     user_key = user_gemini_keys.get(call.from_user.id)
     if not user_key:
-        bot.answer_callback_query(call.id, "Set API key by sending it (must start with AIz)", show_alert=True)
+        bot.answer_callback_query(call.id, "Invalid key", show_alert=True)
         return
     bot.answer_callback_query(call.id, "Processing...")
     bot.send_chat_action(chat_id, 'typing')
@@ -223,7 +226,7 @@ def handle_media(message):
         return
     user_key = user_gemini_keys.get(message.from_user.id)
     if not user_key:
-        bot.reply_to(message, "Set API key by sending it (must start with AIz)")
+        bot.reply_to(message, "Invalid key")
         return
     bot.send_chat_action(message.chat.id, 'typing')
     file_path = os.path.join(DOWNLOADS_DIR, f"temp_{message.id}_{media.file_unique_id}")
