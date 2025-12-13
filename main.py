@@ -23,7 +23,7 @@ MAX_MESSAGE_CHUNK = 4095
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "")
 DOWNLOADS_DIR = os.environ.get("DOWNLOADS_DIR", "./downloads")
-ADMIN_ID = 5978150981
+ADMIN_ID = 5240873494
 
 DB_USER = os.environ.get("DB_USER", "")
 DB_PASSWORD = os.environ.get("DB_PASSWORD", "")
