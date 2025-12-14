@@ -12,3 +12,4 @@ pymongo
 fastapi
 uvicorn[standard]
 pydub
+pyaudioop
