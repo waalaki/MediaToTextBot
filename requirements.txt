@@ -11,4 +11,4 @@ fastapi
 pymongo
 fastapi
 uvicorn[standard]
-faster_whisper
+pydub
