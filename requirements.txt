@@ -13,3 +13,4 @@ fastapi
 uvicorn[standard]
 pydub
 pyaudioop
+speech_recognition
