@@ -189,7 +189,7 @@ def ask_gemini(text, instruction, key, uid):
     return data["candidates"][0]["content"]["parts"][0]["text"]
 
 def build_action_keyboard(text_len):
-    btns #= [[InlineKeyboardButton("⭐️ Get translating", callback_data="translate_menu|")]]
+    btns = [[InlineKeyboardButton("⭐️ Get translating", callback_data="translate_menu|")]]
     if text_len > 1000:
         btns.append([InlineKeyboardButton("Get Summarize", callback_data="summarize_menu|")])
     return InlineKeyboardMarkup(btns)
