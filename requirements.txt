@@ -1,6 +1,7 @@
-pyTelegramBotAPI==4.15.4
-Flask==3.0.0
-requests==2.31.0
-SpeechRecognition==3.10.0
-pydub==0.25.1
-vosk==0.3.45
+Flask
+pyTelegramBotAPI
+requests
+speechrecognition
+pydub
+vosk
+
