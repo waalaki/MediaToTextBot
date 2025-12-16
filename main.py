@@ -342,7 +342,7 @@ def transcribe_with_vosk(wav_path):
 
 def transcribe_file_with_speech_recognition(file_path, language=None):
     audio = AudioSegment.from_file(file_path)
-    audio = audio.set_frame_rate(8000).set_channels(1)
+    audio = audio.set_frame_rate(16000).set_channels(1)
     tmp = tempfile.NamedTemporaryFile(suffix=f"_{uuid.uuid4().hex}.wav", delete=False, dir=DOWNLOADS_DIR)
     tmp.close()
     audio.export(tmp.name, format="wav")
