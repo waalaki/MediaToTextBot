@@ -190,7 +190,7 @@ async def ensure_joined(client, message):
 @app.on_message(filters.command(["start", "help"]))
 async def send_welcome(client, message):
     if await ensure_joined(client, message):
-        welcome_text = "👋 Salaam!\n• Send me\n• voice message\n• audio file\n• video\n• YouTube Link\n• to transcribe/summarize for free"
+        welcome_text = "👋 Salaam!\n• Send me\n• voice message\n• audio file\n• video\n• to transcribe for free"
         await message.reply_text(welcome_text, quote=True)
 
 @app.on_message(filters.command("mode"))
@@ -211,7 +211,7 @@ async def set_key_plain(client, message):
         return
     prev = get_user_key_db(message.from_user.id)
     set_user_key_db(message.from_user.id, token)
-    msg = "API key updated." if prev else "Okay send me audio, video or YouTube link 👍"
+    msg = "API key updated." if prev else "Okay send me audio or video 👍"
     await message.reply_text(msg, quote=True)
     if not prev:
         try:
@@ -240,9 +240,9 @@ async def summopt_cb(client, call):
         await call.edit_message_reply_markup(reply_markup=None)
     except: return
     prompts = {
-        "Short": "Summarize this text in the original language in 1-2 concise sentences.",
-        "Detailed": "Summarize this text in the original language in a detailed paragraph.",
-        "Bulleted": "Summarize this text in the original language as a bulleted list."
+        "Short": "Summarize this text in the original language in which it is written in 1-2 concise sentences.",
+        "Detailed": "Summarize this text in the original language in which it is written in a detailed paragraph.",
+        "Bulleted": "Summarize this text in the original language in which it is written as a bulleted list."
     }
     await process_text_action(client, call, origin, f"Summarize ({style})", prompts.get(style))
 
