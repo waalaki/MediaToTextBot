@@ -28,3 +28,4 @@ pydub
 google-genai
 PocketSphinx
 vosk
+yt_dlp
