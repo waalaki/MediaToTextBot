@@ -343,7 +343,7 @@ async def send_long_text(client, chat_id, text, reply_id, uid, action="Transcrip
         else:
             fname = os.path.join(DOWNLOADS_DIR, f"{action}.txt")
             with open(fname, "w", encoding="utf-8") as f: f.write(text)
-            sent = await client.send_document(chat_id, fname, caption="Transcription saved to file", reply_to_message_id=reply_id)
+            sent = await client.send_document(chat_id, fname, caption="Open this file and copy the text inside 👍", reply_to_message_id=reply_id)
             try: os.remove(fname)
             except: pass
             return sent
