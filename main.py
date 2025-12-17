@@ -131,7 +131,7 @@ def get_user_key_db(uid):
 def convert_to_opt_mp3(input_path):
     base = os.path.splitext(input_path)[0]
     output_path = f"{base}_opt.mp3"
-    cmd = ["ffmpeg", "-i", input_path, "-vn", "-ac", "1", "-ar", "16000", "-b:a", "24k", "-y", output_path]
+    cmd = ["ffmpeg", "-i", input_path, "-vn", "-ac", "1", "-ar", "16000", "-b:a", "32k", "-y", output_path]
     try:
         p = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if p.returncode == 0 and os.path.exists(output_path):
