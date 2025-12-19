@@ -151,7 +151,7 @@ def ask_gemini(text, instruction, key, uid):
 
 def summarize_youtube_video(video_url, key, uid):
     client = genai.Client(api_key=key)
-    prompt = "Summarize this YouTube video "
+    prompt = "✅"
     current_model = get_current_model(uid)
     response = client.models.generate_content(
         model=current_model,
