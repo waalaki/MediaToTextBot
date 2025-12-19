@@ -113,7 +113,7 @@ def get_user_key_db(uid):
     return user_gemini_keys.get(uid)
 
 def get_user_mode(uid):
-    return user_mode.get(uid, "Text File")
+    return user_mode.get(uid, "Split messages")
 
 def ffmpeg_convert_to_opt(input_path):
     base = os.path.splitext(input_path)[0]
