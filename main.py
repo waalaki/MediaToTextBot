@@ -261,7 +261,7 @@ async def process_text_action(client, call, origin_msg_id, log_action, prompt_in
         return
     user_key = get_user_key_db(call.from_user.id)
     if not user_key: return
-    await call.answer("Processing summary...")
+    await call.answer("Processing...")
     await client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     try:
         res = await asyncio.get_event_loop().run_in_executor(None, ask_gemini, data["text"], prompt_instr, user_key, call.from_user.id)
@@ -277,7 +277,7 @@ async def handle_youtube_link(client, message):
         await message.reply_text("first send me Gemini key 🤓", quote=True)
         return
     url = message.matches[0].group(0)
-    msg = await message.reply_text("Summarizing YouTube video... ⏳", quote=True)
+    msg = await message.reply_text("Okay wait a minute... ⏳", quote=True)
     await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
     try:
         res = await asyncio.get_event_loop().run_in_executor(None, summarize_youtube_video, url, user_key, message.from_user.id)
@@ -286,7 +286,7 @@ async def handle_youtube_link(client, message):
         if sent:
             user_transcriptions.setdefault(message.chat.id, {})[sent.id] = {"text": res, "origin": message.id}
     except Exception as e:
-        await msg.edit_text(f"❌ YouTube Summary Error: {e}")
+        await msg.edit_text(f"❌ Error: {e}")
 
 @app.on_message(filters.voice | filters.audio | filters.video | filters.document)
 async def handle_media(client, message):
