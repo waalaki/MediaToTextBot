@@ -122,7 +122,21 @@ def transcribe_media_gemini(file_url, mime_type, language_code):
     file_content = requests.get(file_url, timeout=REQUEST_TIMEOUT).content
     b64_data = base64.b64encode(file_content).decode('utf-8')
     
-    prompt = f"Please transcribe this file Return ONLY the final cleaned transcription — no preamble, no commentary."
+    prompt = f"""
+Transcribe the audio accurately in its original language.
+
+Formatting rules:
+- Preserve the original meaning exactly
+- Add proper punctuation
+- Split the text into short, readable paragraphs
+- Each paragraph should represent one clear idea
+- Avoid long blocks of text
+- Remove filler words only if meaning is unchanged
+- Do NOT summarize
+- Do NOT add explanations
+
+Return ONLY the final formatted transcription.
+"""
 
     def perform(key):
         payload = {
