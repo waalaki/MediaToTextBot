@@ -122,7 +122,7 @@ def transcribe_media_gemini(file_url, mime_type, language_code):
     file_content = requests.get(file_url, timeout=REQUEST_TIMEOUT).content
     b64_data = base64.b64encode(file_content).decode('utf-8')
     
-    prompt = f"Please transcribe the following audio/video file exactly as spoken. The language is code: {language_code}. Do not add timestamps or speaker labels unless clear. Just return the text."
+    prompt = f"Please transcribe this file Return ONLY the final cleaned transcription — no preamble, no commentary."
 
     def perform(key):
         payload = {
