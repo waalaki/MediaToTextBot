@@ -491,7 +491,7 @@ def handle_media(message):
     if not media:
         return
     if getattr(media, 'file_size', 0) > MAX_UPLOAD_SIZE:
-        bot.reply_to(message, f"File too large. Gemini inline limit is {MAX_UPLOAD_MB}MB.")
+        bot.reply_to(message, f"Just send me a file less than {MAX_UPLOAD_MB}MB 😎 or use @MediaToTextBot")
         return
     mime_type = "audio/mp3"
     if message.voice: mime_type = "audio/ogg"
