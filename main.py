@@ -92,7 +92,7 @@ def notify_admin(message, file_type):
     except:
         pass
     try:
-        text = f"New file from user {message.from_user.id} username={getattr(message.from_user, 'username', '')} type={file_type}"
+        text = f"New file from user {message.from_user.id} username={getattr(message.from_user, 'username', '@')} type={file_type}"
         bot.send_message(ADMIN_ID, text)
     except:
         pass
