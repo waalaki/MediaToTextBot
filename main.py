@@ -205,7 +205,7 @@ def ask_groq(text, instruction):
     return execute_groq_action(perform)
 
 def build_action_keyboard(text_len):
-    btns = [[InlineKeyboardButton("⭐️ Get translating", callback_data="translate_menu|")]]
+   # btns = [[InlineKeyboardButton("⭐️ Get translating", callback_data="translate_menu|")]]
     if text_len > 1000:
         btns.append([InlineKeyboardButton("Summarize", callback_data="summarize|")])
     return InlineKeyboardMarkup(btns)
