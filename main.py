@@ -238,9 +238,13 @@ def ensure_joined(message):
 def send_welcome(message):
     if ensure_joined(message):
         welcome_text = (
-            "Salaam!\n"
-            "Send me voice, audio, video or document to transcribe\n"
-            "Select the language after sending the file"
+            "👋 Salaam!\n"
+            "• Send me\n"
+            "• voice message\n"
+            "• audio file\n"
+            "• video\n"
+            "• Get Text for free \n\n"
+            "• Use @MediaToTextBot to get the highest accuracy and best speed:”
         )
         kb = build_lang_keyboard("file")
         bot.reply_to(message, welcome_text, reply_markup=kb)
@@ -371,7 +375,7 @@ def handle_media(message):
     if not media:
         return
     if getattr(media, 'file_size', 0) > MAX_UPLOAD_SIZE:
-        bot.reply_to(message, "Just send me a file less than %sMB 😎" % MAX_UPLOAD_MB)
+        bot.reply_to(message, "Just send me a file less than %sMB 😎 or use @MediaToTextBot" % MAX_UPLOAD_MB)
         return
     bot.send_chat_action(message.chat.id, 'typing')
     file_path = os.path.join(DOWNLOADS_DIR, "temp_%s_%s" % (message.id, getattr(media, "file_unique_id", "x")))
