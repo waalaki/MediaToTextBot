@@ -307,8 +307,8 @@ def send_welcome(message):
             "• voice message\n"
             "• audio file\n"
             "• video\n"
-            "• to transcribe using Whisper Large v3\n\n"
-            "Select the language spoken in your audio or video:"
+            "• Get Text for free \n\n"
+            "• Use @MediaToTextBot to get the highest accuracy and best speed:"
         )
         kb = build_lang_keyboard("file")
         bot.reply_to(message, welcome_text, reply_markup=kb, parse_mode="Markdown")
