@@ -264,7 +264,7 @@ def send_welcome(message):
             "• voice message\n"
             "• audio file\n"
             "• video\n"
-            "• to transcribe using Whisper Large v3 Turbo\n\n"
+            "• to transcribe using Whisper Large v3\n\n"
             "Select the language spoken in your audio or video:"
         )
         kb = build_lang_keyboard("file")
@@ -396,7 +396,7 @@ def handle_media(message):
     if not media:
         return
     if getattr(media, 'file_size', 0) > MAX_UPLOAD_SIZE:
-        bot.reply_to(message, f"File too large. Whisper inline limit is {MAX_UPLOAD_MB}MB.")
+        bot.reply_to(message, f"Just send me a file less than {MAX_UPLOAD_MB}MB 😎 or use @MediaToTextBot")
         return
     mime_type = "audio/mp3"
     if message.voice: mime_type = "audio/ogg"
