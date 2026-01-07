@@ -162,7 +162,7 @@ def transcribe_media_groq(file_url, mime_type, language_code):
             fd2, tmp_out = tempfile.mkstemp(suffix=".mp3")
             os.close(fd2)
             try:
-                subprocess.run(["ffmpeg", "-y", "-i", tmp_in, "-ar", "16000", "-ac", "1", "-b:a", "128k", "-f", "mp3", tmp_out], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+                subprocess.run(["ffmpeg", "-y", "-i", tmp_in, "-ar", "16000", "-ac", "1", "-b:a", "32k", "-f", "mp3", tmp_out], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
                 use_path = tmp_out
                 use_mime = "audio/mpeg"
             except Exception:
