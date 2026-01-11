@@ -97,7 +97,7 @@ def convert_to_mp3(input_path, timeout=120):
     fd, out_path = tempfile.mkstemp(suffix=".mp3", dir=DOWNLOADS_DIR)
     os.close(fd)
     try:
-        cmd = ["ffmpeg", "-y", "-i", input_path, "-ar", "16000", "-ac", "1", "-b:a", "64k", out_path]
+        cmd = ["ffmpeg", "-y", "-i", input_path, "-ar", "16000", "-ac", "1", "-b:a", "48k", out_path]
         subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
         return out_path
     except Exception:
