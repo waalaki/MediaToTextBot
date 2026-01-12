@@ -26,7 +26,7 @@ DOWNLOADS_DIR = os.environ.get("DOWNLOADS_DIR", "./downloads")
 GROQ_KEYS = os.environ.get("GROQ_KEYS", os.environ.get("GROQ_API_KEY", ""))
 GROQ_TRANSCRIBE_MODEL = os.environ.get("GROQ_TRANSCRIBE_MODEL", "whisper-large-v3")
 GROQ_CHAT_MODEL = os.environ.get("GROQ_CHAT_MODEL", "llama-3.1-8b-instant")
-MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "2"))
+MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "3"))
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
