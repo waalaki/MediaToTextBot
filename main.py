@@ -247,7 +247,7 @@ def send_welcome(message):
             "• audio file\n"
             "• video\n"
             "• Get Text for free \n\n"
-            "• Use @MediaToTextBot to get the highest accuracy and best speed:"
+            "• 💎 devloper by @orlaki"
         )
         kb = build_lang_keyboard("file")
         bot.reply_to(message, welcome_text, reply_markup=kb)
